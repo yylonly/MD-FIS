@@ -136,6 +136,9 @@ maxDissim <- function(a, b, n = 2, obj = minDiss, useNames = FALSE, randomFrac =
       #cat("j is: ", j, "\n")
       #cat("r[j] is:", r[j, ], "\n")
       subgroup <- NULL
+    
+      if (groupsize == 11) 
+        subgroup <- r[r[, 1] == r[j, 1] & r[, 2] == r[j, 2] & r[, 3] == r[j, 3] & r[, 3] == r[j, 3] & r[, 4] == r[j, 4] & r[, 5] == r[j, 5] & r[, 6] == r[j, 6] & r[, 7] == r[j, 7] & r[, 8] == r[j, 8] & r[, 9] == r[j, 9] & r[, 10] == r[j, 10] & r[, 11] == r[j, 11], 12:bigdatasetcolums]
       
       if (groupsize == 10) 
           subgroup <- r[r[, 1] == r[j, 1] & r[, 2] == r[j, 2] & r[, 3] == r[j, 3] & r[, 3] == r[j, 3] & r[, 4] == r[j, 4] & r[, 5] == r[j, 5] & r[, 6] == r[j, 6] & r[, 7] == r[j, 7] & r[, 8] == r[j, 8] & r[, 9] == r[j, 9] & r[, 10] == r[j, 10], 11:bigdatasetcolums]
@@ -156,7 +159,7 @@ maxDissim <- function(a, b, n = 2, obj = minDiss, useNames = FALSE, randomFrac =
       if (!is.null(subgroup)) {
         #cat ("r is ", dim(data.matrix(r[j, 10:bigdatasetcolums])), "\n")
         #cat ("subgroup is ", dim(subgroup), "\n")
-        jdistance <- mean(proxy::dist(t(r[j, 10:bigdatasetcolums]), subgroup))
+        jdistance <- mean(proxy::dist(t(r[j, (groupsize+1):bigdatasetcolums]), subgroup))
         subdisance <- c(subdisance, jdistance)
       }
       else

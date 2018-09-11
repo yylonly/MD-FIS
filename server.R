@@ -173,10 +173,11 @@ server <- function(input, output) {
       
       order_onlygroupdatastatic <- onlygroupdatastatic[order(onlygroupdatastatic$numdup, decreasing = FALSE), ]
       #filtered data
-      filtered_group <- filter(order_onlygroupdatastatic, numdup <= input$filtersize)
+      #filtered_group <- filter(order_onlygroupdatastatic, numdup <= input$filtersize)
+      filtered_group <- dplyr::filter(order_onlygroupdatastatic, numdup <= input$filtersize)
         
       #get filtered data index  
-      conformIndex <- which(is.na(row.match(data.frame(scaleddata[, input$groupfrom:input$groupto]), filtered_group[, input$groupfrom:input$groupto])))
+      conformIndex <- which(is.na(prodlim::row.match(data.frame(scaleddata[, input$groupfrom:input$groupto]), filtered_group[, input$groupfrom:input$groupto])))
         
       conformscaledata <- scaleddata[conformIndex, ]
       less3scaleddata <<- scaleddata[-conformIndex, ]

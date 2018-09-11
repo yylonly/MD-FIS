@@ -68,7 +68,7 @@ ui <- navbarPage("MD-FIS",
                                          value = 1),
                             
                             numericInput("groupto", 
-                                         h3("Group To (8, 9 or 10)"), 
+                                         h3("Group To (8, 9, 10 or 11)"), 
                                          value = 1),
                                                         
                             
@@ -78,7 +78,7 @@ ui <- navbarPage("MD-FIS",
                             sliderInput("boundary", h3("Abnormal Data:"),
                                         min = 0, max = 100, value = c(20, 80)),
                             
-                            checkboxInput("smallgroupfilter", label = "Small Group Filter", value = FALSE),
+                            checkboxInput("smallgroupfilter", label = "Small Group Filter", value = TRUE),
                             checkboxInput("abnormaly", label = "Label Abnormal Filter", value = FALSE),
                             
                             
