@@ -15,11 +15,11 @@ extra <- read.csv("alldata.csv")
 alldata <- data.matrix(allX)
 extradata <- data.matrix(extra)
 
-y <- alldata[,19:22]/100
-X <- alldata[, 1:18]
+y <- alldata[,34:40]/100
+X <- alldata[, 1:33]
 
-extraY <- extradata[,19:22]/100
-extraX <- extradata[, 1:18]
+extraY <- extradata[,34:40]/100
+extraX <- extradata[, 1:33]
 
 maxs <- apply(X, 2, max)
 mins <- apply(X, 2, min)

@@ -36,7 +36,7 @@ server <- function(input, output) {
         output$shape <- renderText({ 
           req(input$dataset) 
           paste("row:", datasetr, "column:", datasetc)})
-     
+          
       },
       
       error = function(e) {

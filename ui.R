@@ -42,7 +42,7 @@ ui <- navbarPage("MD-FIS",
                             
                             numericInput("labelto", 
                                          h3("Label To"), 
-                                         value = 1),
+                                         value = 30),
                             
                             checkboxInput("labely", label = "Normalize Labels", value = FALSE),
                             
